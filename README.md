@@ -1,57 +1,86 @@
 # My ZSH Configuration
 
-Este repositório contém minha configuração pessoal do **ZSH** com o uso de plugins e ferramentas adicionais para melhorar a experiência de terminal.
+This repository contains my personal **ZSH** configuration with additional plugins and tools to enhance the terminal experience.
 
-## Ferramentas Utilizadas
+## Tools Used
 
-- **ZSH**: Um shell poderoso e interativo que substitui o Bash.
-- **Oh My Zsh**: Framework para gerenciar a configuração do ZSH.
-- **Starship**: Um prompt de shell altamente customizável.
-- **ZSH Syntax Highlighting**: Plugin para realçar a sintaxe no terminal.
-- **ZSH Autosuggestions**: Plugin para sugerir comandos com base no histórico.
-- **fzf**: Fuzzy finder para procurar arquivos e comandos.
+- **ZSH**: A powerful and interactive shell that replaces Bash.
+- **Oh My Zsh**: Framework for managing ZSH configuration.
+- **Starship**: A highly customizable shell prompt.
+- **ZSH Syntax Highlighting**: Plugin to highlight syntax in the terminal.
+- **ZSH Autosuggestions**: Plugin to suggest commands based on history.
+- **fzf**: Fuzzy finder for searching files and commands.
 
-## Como Instalar
+## Automated Installation (Recommended) 🚀
 
-1. **Instale o ZSH**:
+Run the automated installation script that sets everything up for you:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/my-zsh.git
+cd my-zsh
+./install.sh
+```
+
+The script will automatically:
+- ✅ Detect your operating system (Linux/macOS)
+- ✅ Install ZSH
+- ✅ Install Oh My Zsh
+- ✅ Install Starship
+- ✅ Install all necessary plugins
+- ✅ Configure .zshrc
+- ✅ Set ZSH as the default shell
+
+After installation, run `exec zsh` or logout/login to activate.
+
+## Manual Installation
+
+If you prefer to install manually, follow these steps:
+
+1. **Install ZSH**:
 
    ```bash
    sudo apt install zsh
    ```
 
-2. **Instale o Oh My Zsh**:
+2. **Install Oh My Zsh**:
 
    ```bash
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
 
-3. **Instale o Starship**:
+3. **Install Starship**:
 
    ```bash
    curl -sS https://starship.rs/install.sh | sh
    ```
 
-4. **Instale o ZSH Syntax Highlighting**:
+4. **Install ZSH Syntax Highlighting**:
 
    ```bash
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
    ```
 
-5. **Instale o ZSH Autosuggestions**:
+5. **Install ZSH Autosuggestions**:
 
    ```bash
    git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
    ```
 
-6. **Instale o fzf**:
+6. **Install fzf**:
 
    ```bash
    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
    ```
 
-## Configuração Pessoal
+7. **Copy the configuration**:
 
-Aqui está o conteúdo do arquivo `zsh.rc` para a configuração do ZSH:
+   ```bash
+   cp zsh.rc ~/.zshrc
+   ```
+
+## Personal Configuration
+
+Here is the content of the `zsh.rc` file for ZSH configuration:
 
 ```bash
 export ZSH="$HOME/.oh-my-zsh"
@@ -76,20 +105,20 @@ eval "$(starship init zsh)"
 alias update="sudo apt -y update ; sudo apt -y full-upgrade ; sudo apt -y autoremove ; sudo apt -y autoclean"
 ```
 
-### Explicação da Configuração
+### Configuration Explanation
 
-- **Tema**: O tema escolhido é o `robbyrussell`, um dos temas padrão do Oh My Zsh.
+- **Theme**: The chosen theme is `robbyrussell`, one of Oh My Zsh's default themes.
 - **Plugins**:
-  - `git`: Facilita o uso de comandos Git no terminal.
-  - `aws`: Adiciona suporte a comandos AWS CLI.
-  - `terraform`: Suporte para comandos Terraform.
-  - `docker`: Adiciona autocompletar para Docker.
-  - `zsh-syntax-highlighting`: Destaca comandos conforme você os digita.
-  - `zsh-autosuggestions`: Sugere comandos baseados no histórico de comandos anteriores.
-  - `fzf`: Adiciona funcionalidades de busca interativa.
-- **Starship**: Um prompt de shell moderno e customizável.
-- **Alias**: Cria o alias `update` para atualizar e limpar pacotes no Ubuntu com um único comando.
+  - `git`: Facilitates the use of Git commands in the terminal.
+  - `aws`: Adds support for AWS CLI commands.
+  - `terraform`: Support for Terraform commands.
+  - `docker`: Adds autocomplete for Docker.
+  - `zsh-syntax-highlighting`: Highlights commands as you type them.
+  - `zsh-autosuggestions`: Suggests commands based on previous command history.
+  - `fzf`: Adds interactive search functionality.
+- **Starship**: A modern and customizable shell prompt.
+- **Alias**: Creates the `update` alias to update and clean packages on Ubuntu with a single command.
 
-## Licença
+## License
 
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
